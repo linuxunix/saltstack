@@ -48,3 +48,4 @@ gpgcheck=1
 enabled=0
 gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-6
 http://mirrors.aliyuncs.com/centos/RPM-GPG-KEY-CentOS-6
+

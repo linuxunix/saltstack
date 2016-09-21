@@ -1,12 +1,15 @@
-/etc/yum.repos.d/CentOS-Base.repo:
+yum_config:
   file.managed:
+    - template: jinja 
+    - name: {{ pillar['filename'] }}  
     - source:
-      - salt://files/CentOS-Base.repo
+      - {{ pillar['source'] }}
       - user: root
       - group: root
       - mode: 644
 yum_running:
   cmd.run:
-    - name: yum clean all&&yum makecache&&yum update
+    - template: jinja 
+    - name: {{ pillar['cmd'] }}  
     - require:
-      - file: /etc/yum.repos.d/CentOS-Base.repo
+      - file: yum_config
