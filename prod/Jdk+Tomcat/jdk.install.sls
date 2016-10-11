@@ -6,8 +6,8 @@ jdk-install:
     - group: root
     - mode: 755
   cmd.run:
-    - name: cd /usr/local/src/ && tar xf jdk-7u80-linux-x64.tar.gz && mv jdk1.7.0_80 /usr/local/jdk-1.7 && chown root:root -R /usr/local/jdk-1.7
-    - unless: test -d /usr/local/jdk-1.7
+    - name: cd /usr/local/src/ && tar xf jdk-7u80-linux-x64.tar.gz && mv jdk1.7.0_80 /usr/local/jdk1.7 && chown root:root -R /usr/local/jdk1.7
+    - unless: test -d /usr/local/jdk1.7
     - require:
       - file: jdk-install
 
